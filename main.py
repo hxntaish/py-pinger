@@ -17,7 +17,7 @@ os.system('cls' if os.name == 'nt' else 'clear')
 
 def loading():
     for i in range(0, 101):
-        time.sleep(0.05)
+        time.sleep(0.01)
         sys.stdout.write("\r" + "[+] Loading modules: %d%%" % i)
         sys.stdout.flush()
     print("\n")
@@ -37,13 +37,13 @@ if choice == '1':
     print('Example: google.com')
     website = input('Website: ')
     os.system('cls' if os.name == 'nt' else 'clear')
-    os.system('ping ' + website)
+    os.system('ping ' + website + ' -t' if os.name == 'nt' else 'ping ' + website)
 elif choice == '2':
     os.system('cls' if os.name == 'nt' else 'clear')
     print('Example: 1.1.1.1')
     ip = input('IP: ')
     os.system('cls' if os.name == 'nt' else 'clear')
-    os.system('ping ' + ip)
+    os.system('ping ' + ip + ' -t' if os.name == 'nt' else 'ping ' + ip)
 else:
     print('Wrong choice!')
     time.sleep(1)
